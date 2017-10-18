@@ -2,6 +2,11 @@
 
 namespace Pluggit\Hasher;
 
+/**
+ * The Hasher class is in charge of create and validate hashes given a payload
+ *
+ * @package Pluggit\Hasher
+ */
 class Hasher
 {
     const PADDING_LENGTH = 8;
@@ -13,6 +18,8 @@ class Hasher
     private $privateKey;
 
     /**
+     * Hasher constructor, both parts of the communication, have to use the same private key.
+     *
      * @param string $privateKey
      */
     public function __construct($privateKey)
@@ -22,6 +29,7 @@ class Hasher
     }
 
     /**
+     * Create a hash given a payload
      * @param string $payload
      *
      * @return string
@@ -35,6 +43,7 @@ class Hasher
     }
 
     /**
+     * Validate a hash given a payload
      * @param string $payload
      * @param string $hash
      *
