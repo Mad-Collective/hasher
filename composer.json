@@ -1,4 +1,5 @@
 {
+    "name": "pluggit/hasher",
     "require-dev": {
         "phpunit/phpunit": "5.7"
     },
