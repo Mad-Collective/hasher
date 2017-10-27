@@ -3,23 +3,22 @@
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-if (!isset($argv[1]) || !isset($argv[2])) {
-    echo 'usage: hasher <hash|check> <payload> [<hash>]' . PHP_EOL;
+if (!isset($argv[1]) || !isset($argv[2]) || !isset($argv[3])) {
+    echo 'usage: hasher <hash|check> <private_key> <payload> [<hash>]' . PHP_EOL;
     exit(1);
 }
 
 $command = strpos($argv[1], 'hash') !== false ? 0 : 1;
-$payload = $argv[2];
+$secretKey = $argv[2];
+$payload = $argv[3];
 $hash = null;
 
-if ($command == 1 && !isset($argv[3])) {
+if ($command == 1 && !isset($argv[4])) {
     echo 'need both payload and hash to check it'. PHP_EOL;
     exit(1);
-} elseif ($command == 1 && isset($argv[3])) {
-    $hash = $argv[3];
+} elseif ($command == 1 && isset($argv[4])) {
+    $hash = $argv[4];
 }
-
-$secretKey = '{SLfwK{K]3~FND:U';
 
 $hasher = new \Pluggit\Hasher\Hasher($secretKey);
 
