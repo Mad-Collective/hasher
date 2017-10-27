@@ -26,6 +26,7 @@ To generate a new hash execute:
 ```
 
 To check if a hash is valid execute:
+<<<<<<< HEAD
 ```php
 ./hasher check <private_key> <payload> <hash>
 ```
