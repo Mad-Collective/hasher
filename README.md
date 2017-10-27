@@ -18,3 +18,14 @@
 | public | <strong>hash(</strong><em>string</em> <strong>$payload</strong>)</strong> : <em>string</em><br /><em>Create a hash given a payload</em> |
 | public | <strong>isValid(</strong><em>string</em> <strong>$payload</strong>, <em>string</em> <strong>$hash</strong>)</strong> : <em>bool</em><br /><em>Validate a hash given a payload</em> |
 
+### Command-line hash generation
+
+To generate a new hash execute:
+```php
+./hasher hash <private_key> <payload>
+```
+
+To check if a hash is valid execute:
+```
+./hasher check <private_key> <payload> <hash>
+```
